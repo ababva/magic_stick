@@ -1,0 +1,11 @@
+Команды для создания VPN-подключения в Ubuntu:
+
+Подключение репозитория в котором находятся пакеты необходимые для создания VPN-подключения:
+sudo add-apt-repository ppa:nm-l2tp/network-manager-l2tp
+sudo apt update
+Установка дополнения к стандартному NetworkManager с помощью двух пакетов: sudo apt install -y network-manager-l2tp network-manager-l2tp-gnome
+Перезагрузка компьютера после окончания установки: sudo reboot
+Проверка установленных пакетов: dpkg --get-selections | grep l2tp
+Если в списке пакетов находится go-l2tp, удалите пакет и установите xl2tpd:
+sudo apt purge go-l2tp
+sudo apt install xl2tpd

@@ -1,0 +1,6 @@
+/etc/bind/ipa-options-ext.conf
+
+виду:
+dnssec-validation no; allow-recursion { any: }: allow-query-cache { any; }:
+Для применения изменений необходимо перезапустить DNS-службу на контроллере домена:
+sudo systemctl restart bind9-pkcs11.service
